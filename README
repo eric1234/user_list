@@ -1,0 +1,21 @@
+Provides a drop-in user management. Functionality is limited to
+adding, editing and deleting users. The data editable is very simple
+(email, password, etc.). If you need more then you probably need
+something more custom to your app.
+
+Currently we assume the following:
+
+* The models handles password hashing. We just use password=. We
+  recommend the authlogic gem to handle this.
+* The name of the user is in a field called just "name". We may expand
+  this later to support first name and last name as seperate fields
+  but for now it is just name. Also we might in the future allow no
+  name (just e-mail and password).
+* When a user is "deleted". Instead an "active" flag it set to false
+  We assume the database defaults to flag to true when a new user is
+  created.
+
+For more info on how to setup your app to use this plugin see the
+test_app_template for details on everything required to make this gem
+work on a Rails app (ignoring the parts used to ensure this plugin
+loads from a non-standard location).

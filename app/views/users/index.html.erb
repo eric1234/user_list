@@ -1,0 +1,38 @@
+<h1>Manage Users</h1>
+
+<%= error_messages_for :user, :object => [@user] + @users %>
+
+<table id="users">
+  <% for user in @users %>
+    <tr id="show-user-<%= user.id %>" <%= 'style="display: none"' unless user.errors.empty? %>>
+      <td style="width: 300px"><%= user.name %></td>
+      <td style="width: 200px"><%= user.email %></td>
+      <td style="width: 100px">******</td>
+      <td style="width: 50px"><%= image_tag 'user_list/edit.gif', :class => 'edit-user' %></td>
+      <td style="width: 50px">
+        <%= button_to('Delete', user,
+          :type => 'image', :src => image_path('user_list/delete.gif'),
+          :method => :delete).gsub('submit', 'image') %>
+      </td>
+    </tr>
+    <% form_for user do |u| %>
+      <tr id="edit-user-<%= user.id %>" <%= 'style="display: none"' if user.errors.empty? %>>
+        <td style="width: 300px"><%= u.text_field :name, :size => nil, :placeholder => 'Name' %></td>
+        <td style="width: 200px"><%= u.text_field :email, :size => nil, :placeholder => 'E-mail' %></td>
+        <td style="width: 100px"><%= u.password_field :password, :size => nil, :placeholder => 'Password' %></td>
+        <td style="width: 50px"><%= submit_tag 'Update' %></td>
+        <td style="width: 50px">
+          <%= link_to 'Cancel', '#', :class => 'cancel-user-edit' %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+  <tr id="new-user">
+    <% form_for @user do |u| %>
+      <td style="width: 300px"><%= u.text_field :name, :size => nil, :placeholder => 'Name' %></td>
+      <td style="width: 200px"><%= u.text_field :email, :size => nil, :placeholder => 'E-mail' %></td>
+      <td style="width: 100px"><%= u.password_field :password, :size => nil, :placeholder => 'Password' %></td>
+      <td colspan="2" style="width: 100px"><%= submit_tag 'Add New User' %></td>
+    <% end %>
+  </tr>
+</table>
