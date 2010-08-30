@@ -16,6 +16,6 @@ Currently we assume the following:
   created.
 
 For more info on how to setup your app to use this plugin see the
-test_app_template for details on everything required to make this gem
-work on a Rails app (ignoring the parts used to ensure this plugin
-loads from a non-standard location).
+test/test_app_template.rb for details on everything required to make
+this gem work on a Rails app (ignoring the parts used to ensure this
+plugin loads from a non-standard location).
