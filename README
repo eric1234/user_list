@@ -19,3 +19,8 @@ For more info on how to setup your app to use this plugin see the
 test/test_app_template.rb for details on everything required to make
 this gem work on a Rails app (ignoring the parts used to ensure this
 plugin loads from a non-standard location).
+
+= CREDIT
+
+This gem was developed by Eric Anderson (http://pixelwareinc.com) mostly
+as a by-product of the work done under Red Tusk Studios (http://redtusk.com).
