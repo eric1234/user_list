@@ -28,7 +28,7 @@
     <% end %>
   <% end %>
   <tr id="new-user">
-    <% form_for @user do |u| %>
+    <% form_for @user, :html => {:autocomplete => 'off'} do |u| %>
       <td style="width: 300px"><%= u.text_field :name, :size => nil, :placeholder => 'Name' %></td>
       <td style="width: 200px"><%= u.text_field :email, :size => nil, :placeholder => 'E-mail' %></td>
       <td style="width: 100px"><%= u.password_field :password, :size => nil, :placeholder => 'Password' %></td>
