@@ -1,3 +1,3 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :users, :except => [:edit, :new]
+Rails.application.routes.draw do
+  resources :users, :except => [:edit, :new]
 end

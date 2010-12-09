@@ -20,6 +20,13 @@ test/test_app_template.rb for details on everything required to make
 this gem work on a Rails app (ignoring the parts used to ensure this
 plugin loads from a non-standard location).
 
+To install just add:
+
+  gem 'user_list'
+
+to your Gemfile and copy the assets into your app. Support for Rails 2.x
+was dropped at version 0.0.3 of this gem.
+
 = CREDIT
 
 This gem was developed by Eric Anderson (http://pixelwareinc.com) mostly

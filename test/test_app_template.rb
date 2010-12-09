@@ -1,19 +1,8 @@
-lib 'test_gem_locator.rb', <<FILE
-class TestGemLocator < Rails::Plugin::Locator
-  def plugins
-    Rails::Plugin.new(File.join(File.dirname(__FILE__), *%w(.. .. ..)))
-  end
-end
-FILE
-
-lib 'tasks/user_list_tasks.rake', <<FILE
-require File.join(File.dirname(__FILE__), *%w(.. .. .. .. lib user_list rails_tasks))
-FILE
-
 environment <<CONFIG
-require 'test_gem_locator'
-config.plugin_locators << TestGemLocator
+  require File.join(File.dirname(__FILE__), *%w(.. .. .. lib user_list.rb))
 CONFIG
+
+gem 'ruby-debug'
 
 # Everything below is suggested setup for an app using the gem
 
@@ -55,5 +44,3 @@ file 'app/views/layouts/application.html.erb', <<LAYOUT
   </body>
 </html>
 LAYOUT
-
-rake 'user_list:assets:copy'
