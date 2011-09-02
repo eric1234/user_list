@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'user_list'
-  s.version = '0.0.4'
+  s.version = '0.1.0'
   s.author = 'Eric Anderson'
   s.email = 'eric@pixelwareinc.com'
   s.add_dependency 'rails'
