@@ -10,7 +10,9 @@ class UsersController < ApplicationController
   # If previously existed we just re-activate and update properties
   def create
     @user = User.find_or_initialize_by_email params[:user][:email]
-    @user.attributes = params[:user]
+    @user.name = params[:user][:name]
+    @user.email = params[:user][:email]
+    @user.password = params[:user][:password]
     @user.password_confirmation = params[:user][:password]
     @user.active = true
 
@@ -26,9 +28,12 @@ class UsersController < ApplicationController
   # Update the properties of a user
   def update
     @user = User.find params[:id]
+    @user.name = params[:user][:name]
+    @user.email = params[:user][:email]
+    @user.password = params[:user][:password]
     @user.password_confirmation = params[:user][:password] unless
       params[:user][:password].blank?
-    if @user.update_attributes params[:user]
+    if @user.save
       flash[:notice] = 'User updated'
       redirect_to users_url
     else
