@@ -1,13 +1,12 @@
 Gem::Specification.new do |s|
   s.name = 'user_list'
-  s.version = '0.1.1'
+  s.version = '0.2.0'
   s.author = 'Eric Anderson'
   s.email = 'eric@pixelwareinc.com'
   s.add_dependency 'rails'
   s.files = Dir['**/*'].reject do |f|
     f =~ /^test/ || f == 'user_list.gemspec' || f =~ /^pkg/
   end
-  s.has_rdoc = true
   s.extra_rdoc_files << 'README'
   s.rdoc_options << '--main' << 'README'
   s.summary = 'A simple Rails addon for managing users'
